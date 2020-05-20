@@ -1,13 +1,13 @@
 /// <reference types="Cypress" />
 
-const Email='input[type=email]';
-const Password= 'input[type=password]';
-const Submit= 'input[type=submit]';
+const Email="//input[@type='email']";
+const Password= "//input[@type='password']";
+const Submit= "//input[@type='submit']";
 
 class Login{
 
 static visitLoginPage(){
-    cy.visit(url)
+    cy.visit("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F")
 }
 
 static enterEmailId(email){
@@ -27,4 +27,4 @@ static enterSubmit(){
 
 }
 
-export default LoginPage
+export default Login
