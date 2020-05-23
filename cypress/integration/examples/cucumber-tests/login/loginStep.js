@@ -1,8 +1,8 @@
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 import loginpage from "./loginpage";
 
-beforeEach(function()  {
-    // runs once before all tests in the block
+before(function()  {
+    
     cy.fixture('example').then(function(data){
         this.data=data
     })
