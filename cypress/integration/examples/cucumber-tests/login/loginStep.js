@@ -1,30 +1,26 @@
-import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
+import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import loginpage from "./loginpage";
 
-before(function()  {
-    
-    cy.fixture('example').then(function(data){
-        this.data=data
-    })
-    
-  })
+var input;
 
-Given('I open the login Page',() =>{
-    loginpage.visitLoginPage();
-    
+before(function () {
+  cy.fixture("example").then(function (data) {
+    input = data;
+  });
 });
 
-When("Enter the Email id {string}", (email) =>{
-    
-    loginpage.enterEmailId(this.data.email);
-
+Given("I open the login Page", () => {
+  loginpage.visitLoginPage();
 });
 
-And("Enter the password {string}" ,(password) =>{
-    loginpage.enterPassword(this.data.password);
+When("Enter the Email id {string}", (email) => {
+  loginpage.enterEmailId(input.email);
 });
 
-Then('And click on submit button',() =>{
-    loginpage.enterSubmit();
+And("Enter the password {string}", (password) => {
+  loginpage.enterPassword(input.password);
+});
 
+Then("And click on submit button", () => {
+  loginpage.enterSubmit();
 });
