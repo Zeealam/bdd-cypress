@@ -6,8 +6,8 @@ const Submit= "//input[@type='submit']";
 
 class Login{
 
-static visitLoginPage(){
-    cy.visit("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F")
+static visitLoginPage(url){
+    cy.visit(url)
 }
 
 static enterEmailId(email){

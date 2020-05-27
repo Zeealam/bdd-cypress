@@ -10,7 +10,7 @@ before(function () {
 });
 
 Given("I open the login Page", () => {
-  loginpage.visitLoginPage();
+  loginpage.visitLoginPage(input.url)
 });
 
 When("Enter the Email id {string}", (email) => {
